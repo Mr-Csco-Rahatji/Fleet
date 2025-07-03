@@ -23,6 +23,10 @@ public class DriverService {
         return driverRepository.findAll();
     }
 
+    public List<Driver> findAllByManagerId(UUID id){
+        return driverRepository.findByManagerId(id);
+    }
+
     public Driver getDriverById(UUID id) {
         return driverRepository.findById(id).orElseThrow();
     }

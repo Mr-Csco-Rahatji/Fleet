@@ -22,6 +22,10 @@ public class TaxiService {
         return taxiRepository.findAll();
     }
 
+    public List<Taxi> getAllByManagerId(UUID id) {
+        return taxiRepository.findByManagerId(id);
+    }
+
     public Taxi getTaxiById(UUID id) {
         return taxiRepository.findById(id).orElseThrow();
     }

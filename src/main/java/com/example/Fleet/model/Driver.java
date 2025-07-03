@@ -1,7 +1,9 @@
 package com.example.Fleet.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 import java.time.LocalDate;
+import java.util.Date;
 import java.util.UUID;
 
 @Entity
@@ -13,9 +15,12 @@ public class Driver {
     private String name;
     private String surname;
     private String licenseCode;
-    private LocalDate dateOfBirth;
-    private LocalDate licenseExpiryDate;
-    private LocalDate licenseFirstIssueDate;
+    @JsonFormat(pattern = "dd/MM/yyyy")
+    private Date dateOfBirth;
+    @JsonFormat(pattern = "dd/MM/yyyy")
+    private Date licenseExpiryDate;
+    @JsonFormat(pattern = "dd/MM/yyyy")
+    private Date licenseFirstIssueDate;
 
     @OneToOne(cascade = CascadeType.ALL)
     private Address address;
@@ -60,27 +65,27 @@ public class Driver {
         this.licenseCode = licenseCode;
     }
 
-    public LocalDate getDateOfBirth() {
+    public Date getDateOfBirth() {
         return dateOfBirth;
     }
 
-    public void setDateOfBirth(LocalDate dateOfBirth) {
+    public void setDateOfBirth(Date dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
 
-    public LocalDate getLicenseExpiryDate() {
+    public Date getLicenseExpiryDate() {
         return licenseExpiryDate;
     }
 
-    public void setLicenseExpiryDate(LocalDate licenseExpiryDate) {
+    public void setLicenseExpiryDate(Date licenseExpiryDate) {
         this.licenseExpiryDate = licenseExpiryDate;
     }
 
-    public LocalDate getLicenseFirstIssueDate() {
+    public Date getLicenseFirstIssueDate() {
         return licenseFirstIssueDate;
     }
 
-    public void setLicenseFirstIssueDate(LocalDate licenseFirstIssueDate) {
+    public void setLicenseFirstIssueDate(Date licenseFirstIssueDate) {
         this.licenseFirstIssueDate = licenseFirstIssueDate;
     }
 
