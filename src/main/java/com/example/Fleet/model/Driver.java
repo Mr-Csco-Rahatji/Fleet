@@ -31,6 +31,22 @@ public class Driver {
     @OneToOne(mappedBy = "driver")
     private Taxi taxi;
 
+    public Driver(){
+
+    }
+    public Driver(UUID id, String name, String surname, String licenseCode, Date dateOfBirth, Date licenseExpiryDate, Date licenseFirstIssueDate, Address address, Manager manager, Taxi taxi) {
+        this.id = id;
+        this.name = name;
+        this.surname = surname;
+        this.licenseCode = licenseCode;
+        this.dateOfBirth = dateOfBirth;
+        this.licenseExpiryDate = licenseExpiryDate;
+        this.licenseFirstIssueDate = licenseFirstIssueDate;
+        this.address = address;
+        this.manager = manager;
+        this.taxi = taxi;
+    }
+
     // Getters and setters
 
     public UUID getId() {
