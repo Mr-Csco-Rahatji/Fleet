@@ -14,6 +14,19 @@ public class Address {
     private String city;
     private String zipCode;
 
+    public Address(){
+
+    }
+
+    public Address(UUID id, String houseNumber, String streetName, String town, String city, String zipCode) {
+        this.id = id;
+        this.houseNumber = houseNumber;
+        this.streetName = streetName;
+        this.town = town;
+        this.city = city;
+        this.zipCode = zipCode;
+    }
+
     // Getters and setters
 
     public UUID getId() {
