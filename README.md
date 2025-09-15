@@ -1,2 +1,28 @@
 # Fleet
 Fleet management API
+
+spring.application.name=Fleet
+
+# --- Server Port ---
+server.port=8080
+
+# --- MySQL Configuration ---
+spring.datasource.url=jdbc:mysql://sql310.infinityfree.com:3306/if0_39587608_fleet_db?useSSL=false&serverTimezone=UTC
+spring.datasource.username=if0_39587608
+spring.datasource.password=GxJgqbJH8FO9QRQ
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+
+# --- JPA / Hibernate ---
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.format_sql=true
+spring.jpa.database-platform=org.hibernate.dialect.MySQL8Dialect
+
+# --- JWT (Optional Custom Props) ---
+jwt.secret=secret123
+jwt.expirationMs=36000000
+
+# --- Spring Logging (Optional) ---
+logging.level.org.springframework.security=DEBUG
+
+
