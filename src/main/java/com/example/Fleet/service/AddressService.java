@@ -3,7 +3,6 @@ package com.example.Fleet.service;
 import com.example.Fleet.dto.AddressDTO;
 import com.example.Fleet.model.Address;
 import com.example.Fleet.repository.AddressRepository;
-import com.example.Fleet.repository.CheckingRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -41,8 +41,6 @@ public class DriverController {
 
     @GetMapping("/api/drivers/{id}")
     public ResponseEntity<Driver> getDriverById(@PathVariable UUID id) {
-        String email = JwtUtil.getCurrentUserEmail();
-        Manager manager = managerRepository.findByEmail(email).orElseThrow();
         Driver driver = driverService.getDriverById(id);
         return ResponseEntity.ok(driver);
     }
@@ -72,10 +70,7 @@ public class DriverController {
 
     @PutMapping("/api/drivers/{id}")
     public ResponseEntity<Driver> updateDriver(@PathVariable UUID id, @RequestBody DriverDTO driverDto) {
-        String email = JwtUtil.getCurrentUserEmail();
-        Manager manager = managerRepository.findByEmail(email).orElseThrow();
         Driver driver = driverService.getDriverById(id);
-
         driver.setName(driverDto.getName());
         driver.setSurname(driverDto.getSurname());
         driver.setLicenseCode(driverDto.getLicenseCode());
@@ -95,8 +90,6 @@ public class DriverController {
 
     @DeleteMapping("/api/drivers/{id}")
     public ResponseEntity<Void> deleteDriver(@PathVariable UUID id) {
-        String email = JwtUtil.getCurrentUserEmail();
-        Manager manager = managerRepository.findByEmail(email).orElseThrow();
         Driver driver = driverService.getDriverById(id);
         driverService.deleteDriver(driver.getId());
         return ResponseEntity.noContent().build();
